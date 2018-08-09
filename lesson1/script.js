@@ -15,6 +15,6 @@ mainList.shopGoods.push(prompt("Какой тип товаров будем пр
 mainList.shopGoods.push(prompt("Какой тип товаров будем продавать?"));
 mainList.shopGoods.push(prompt("Какой тип товаров будем продавать?"));
 
-alert("Бюджет на один день : " + (mainList.budge/30));
+alert(`Бюджет на один день: ${(mainList.budge/30)}`);
 
 console.log(mainList);

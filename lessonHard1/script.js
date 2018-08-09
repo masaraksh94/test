@@ -1,3 +1,5 @@
+'use strict'
+
 var num = 33721;
 var str = String(num);
 var arr = str.split('');
@@ -8,6 +10,8 @@ for (var i = 0; i < arr.length; i++) {
 }
 
 var degree = Math.pow(result, 3);
+degree = String(degree);
 
-alert("Произведение: " + result);
-alert("126 в степени 3 = " + (degree));
+console.log(`Произведение:  ${result}`);
+console.log(`126 в степени 3 = ${degree}`);
+console.log(`${degree.charAt(0)}${degree.charAt(1)}`);

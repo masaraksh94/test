@@ -1,6 +1,6 @@
 'use strict';
 
-/*let week = ['пн', 'вт', 'ср', 'чт', 'пт', 'cб', 'вс'];
+let week = ['пн', 'вт', 'ср', 'чт', 'пт', 'cб', 'вс'];
 
 for (let i = 0; i < week.length; i++) {
 	if (i == 5 || i == 6) {
@@ -10,7 +10,7 @@ for (let i = 0; i < week.length; i++) {
 	}else{
 		document.write(`${week[i]} <br>`);
 	}
-}*/
+}
 
 
 let arr = ['31376', '79280', '609', '57', '333', '90', '73'];

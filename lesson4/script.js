@@ -9,20 +9,20 @@ let budgeMonth,
 function start() {
 
 	while (isNaN(budgeMonth) || budgeMonth == "" || budgeMonth == null || budgeMonth == 0) {
-		budgeMonth = prompt("Ваш бюджет на месяц?");			
+		budgeMonth = prompt("Ваш бюджет на месяц?", "");			
 	};
 
 	while (isNaN(price) || price == "" || price == null || price == 0) {
-		price = prompt("Введите цену товара")
+		price = prompt("Введите цену товара", "")
 	};
 
-	nameShop = prompt("Название вашего магазина?").toUpperCase();
+	nameShop = prompt("Название вашего магазина?", "").toUpperCase();
 
 	while (isNaN(time) || time == "" || time == null ) {
-		time = prompt("Сколько сейчас времяни?");			
+		time = prompt("Сколько сейчас времяни?", "");			
 	};
 }
-start();
+//start();
 
 let mainList = {
 	budge: budgeMonth,
@@ -32,14 +32,14 @@ let mainList = {
 	employers: {},
 	open: false,
 	discount: true,
-
+	shopItems: [],
 	//Выбор товара для покупки
 	chooseGoods: function chooseGoods() {
 	for (let i = 0; i < 3; i++) {
 
 			let a = prompt("Какой тип товаров будем продавать?");
 
-			if ((typeof(a)) === 'string' && a != null && a != '' & a.length < 50) {
+			if ((typeof(a)) === 'string' && a != null && a != '' && a.length < 50) {
 				console.log('Верно!');
 				mainList.shopGoods[i] = a;
 			} else {
@@ -64,8 +64,8 @@ let mainList = {
 
 	//Рассчет цены по скидке
 	discountPricing: function  discountPricing() {
-		if (mainList.discount == true) {
-			console.log (price = price - (price * 0.2));
+		if (mainList.discount) {
+			console.log (price = price * 0.8);
 		} else {
 			console.log(price);
 		};
@@ -75,9 +75,9 @@ let mainList = {
 	employersStaff: function employersStaff() {
 		for (let i = 1; i <= 4; i++) {
 
-			let a = prompt("Представьтесь!");
+			let a = prompt("Представьтесь!", "");
 
-			if ((typeof(a)) === 'string' && a != null && a != ' ' && a.length < 40) {
+			if ((typeof(a)) === 'string' && a != null && a != '' && a.length < 40) {
 				console.log('Очень приятно!');
 				mainList.employers[i] = a;
 			
@@ -89,9 +89,32 @@ let mainList = {
 
 	//Расчет дневного бюджета
 	dailyBudget: function dailyBudget (budge) {
-		alert(`Бюджет на один день: ${(mainList.budge/30)}`);
+		alert(`Бюджет на один день: ${(budge/30)}`);
+	},
+
+	chooseShopItems: function chooseShopItems() {
+
+		for (let i = 1; i < 2; i++) {
+			let items = prompt("Перечислите через заятую товары", "");
+
+			if ((typeof(items)) === 'string' && items != null && items != '') {
+				mainList.shopItems = items.split(",");
+				mainList.shopItems.push(prompt("Предложите, еще ", ""));
+				mainList.shopItems.sort();
+			}else{
+				i--;
+			}
+		}
+
+		mainList.shopItems.forEach(function(items, i) {
+			i++;
+			console.log(`У нас вы можете купить: ${i} ${items}`);
+		});
+
+		for ( let key in mainList.shopItems) {
+			console.log(`Наш магазин включает в себя: ${mainList.shopItems[key]}`);
+		}
 	}
 };
-
 
 console.log(mainList);

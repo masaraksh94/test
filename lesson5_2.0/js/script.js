@@ -12,7 +12,7 @@ let openBtn = document.getElementById('open-btn'),
 
 	input = document.getElementsByTagName('goods-item'),
 
-	btn = document.getElementsByTagName('btn'),
+	btn = document.getElementsByTagName('button'),
 
 	chooseItems = document.querySelector('.choose-item'),
 	timeValue = document.querySelector('.time-value'),

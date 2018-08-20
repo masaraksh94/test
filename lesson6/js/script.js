@@ -24,6 +24,17 @@ let openBtn = document.getElementById('open-btn'),
 let budgeMonth,
 	price;
 
+let mainList = {
+	budge: budgeMonth,
+	priceProduct: price,
+	shopGoods: [],
+	employers: {},
+	open: false,
+	discount: false,
+	shopItems: [],
+};
+
+
 openBtn.addEventListener('click', () => {
 	budgeMonth = prompt("Ваш бюджет на месяц?", "");
 
@@ -134,18 +145,4 @@ function btnOn(boll) {
 
 countBudgetValue.disabled = true;
 
-//Начало работы
-
-let mainList = {
-	budge: budgeMonth,
-	priceProduct: price,
-	shopGoods: [],
-	employers: {},
-	open: false,
-	discount: false,
-	shopItems: [],
-};
-
 console.log(mainList);
-
-

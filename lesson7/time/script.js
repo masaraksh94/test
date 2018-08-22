@@ -8,6 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
 			m = time.getMinutes().toString(),
 			s = time.getSeconds().toString();
 
+			console.log(typeof(s));
+
 			if (h.length < 2) {
 				h = '0' + h;
 			}

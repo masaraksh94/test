@@ -269,7 +269,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	person.addEventListener('change',  function(){
 		personsSum = +this.value;
 		total = (daysSum + personsSum) * 4000;
-		if(restDay.value == '') {
+		if(restDay.value == '' || restDay.value != null) {
 			totalValue.innerHTML = 0;
 		}else {
 			totalValue.innerHTML = total;
@@ -279,7 +279,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	restDay.addEventListener('change', function(){
 		daysSum = +this.value;
 		total = (daysSum + personsSum) * 4000;
-		if(person.value == '') {
+		if(person.value === '' || restDay.value === '') {
 			totalValue.innerHTML = 0;
 		}else {
 			totalValue.innerHTML = total;
@@ -287,7 +287,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 	place.addEventListener('change', function(){
-		if(restDay.value == '' || person.value == '') {
+		if(restDay.value === '' || person.value === '') {
 			totalValue.innerHTML = 0;
 		} else {
 			let a = total;
@@ -298,7 +298,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// proviso
 	person.onkeypress = function(event) {
-		var except = getNum(event);
+		let except = getNum(event);
 
 		if (except < '0' || except > '9') {
 			return false;
@@ -306,7 +306,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	};
 
 	restDay.onkeypress = function(event) {
-		var except = getNum(event);
+		let except = getNum(event);
 
 		if (except < '0' || except > '9') {
 			return false;

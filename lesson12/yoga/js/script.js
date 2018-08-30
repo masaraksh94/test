@@ -266,10 +266,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	totalValue.innerHTML = 0;
 
+	function checkValue(){
+		return (restDay.value == '' ||
+				person.value == ''  ||
+				restDay.value == null ||
+				person.value == null  ||
+				restDay.value <= 0 ||
+				person.value <= 0 ||
+				restDay == '' ||
+				person == '' ||
+				restDay <= 0 ||
+				person <= 0);
+	};
+
 	person.addEventListener('change',  function(){
 		personsSum = +this.value;
 		total = (daysSum + personsSum) * 4000;
-		if(restDay.value == '' || restDay.value != null) {
+		if(checkValue()) {
 			totalValue.innerHTML = 0;
 		}else {
 			totalValue.innerHTML = total;
@@ -279,7 +292,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	restDay.addEventListener('change', function(){
 		daysSum = +this.value;
 		total = (daysSum + personsSum) * 4000;
-		if(person.value === '' || restDay.value === '') {
+		if(checkValue()) {
 			totalValue.innerHTML = 0;
 		}else {
 			totalValue.innerHTML = total;
@@ -287,7 +300,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 	place.addEventListener('change', function(){
-		if(restDay.value === '' || person.value === '') {
+		if(checkValue()) {
 			totalValue.innerHTML = 0;
 		} else {
 			let a = total;

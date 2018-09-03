@@ -17,8 +17,8 @@ let conf = {
 		]
 	},
 
-	watch: true,
-	devtool: 'cheap-eval-sourse-map'
+	watch: true
+	// devtool: 'cheap-eval-sourse-map'
 };
 
 module.exports = conf;

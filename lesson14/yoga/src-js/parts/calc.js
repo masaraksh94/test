@@ -30,7 +30,7 @@ function calc() {
 		if(checkValue()) {
 			totalValue.innerHTML = 0;
 		}else {
-			totalValue.innerHTML = total;
+			randomVariable();
 		}
 	});
 
@@ -40,7 +40,7 @@ function calc() {
 		if(checkValue()) {
 			totalValue.innerHTML = 0;
 		}else {
-			totalValue.innerHTML = total;
+			randomVariable();
 		}
 	});
 
@@ -48,11 +48,15 @@ function calc() {
 		if(checkValue()) {
 			totalValue.innerHTML = 0;
 		} else {
-			let a = total;
-
-				totalValue.innerHTML = a * this.options[this.selectedIndex].value;;
+			
+			randomVariable();
 		}
 	});
+
+	function randomVariable(){
+		let a = total;
+		totalValue.textContent = a * place.options[place.selectedIndex].value;
+	};
 
 	// proviso
 	person.onkeypress = function(event) {
